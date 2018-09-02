@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="260sp"
+        android:layout_weight="1"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/poster"
+            android:contentDescription="@string/MoviePoster"
+            android:layout_width="0dp"
+            android:layout_height="260sp"
+            android:layout_weight="6"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/white">
+            <TextView
+                android:layout_width="150sp"
+                android:layout_height="50sp"
+                android:id="@+id/title"
+                android:maxLines="4"
+                android:singleLine="false"
+                android:lines="4"
+                android:gravity="center"
+                android:padding="1sp"
+                android:layout_weight="1"
+                style="@style/MagentaWhite"
+                android:textSize="20sp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/vote_average"
+                android:maxLines="1"
+                android:lines="1"
+                android:gravity="center"
+                android:padding="1sp"
+                android:layout_weight="1"
+                style="@style/MagentaWhite"
+                android:textSize="20sp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="1sp"
+                android:gravity="center"
+                android:id="@+id/releaseDate"
+                android:maxLines="4"
+                android:singleLine="false"
+                android:lines="4"
+                android:layout_weight="1"
+                style="@style/MagentaWhite"
+                android:textSize="20sp"
+                />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@color/white">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="200sp"
+            android:background="@color/white">
+
+
+            <TextView
+                android:id="@+id/synopsis"
+                android:layout_width="match_parent"
+                android:layout_height="150sp"
+                android:gravity="bottom"
+                android:maxLines="100"
+                android:scrollbars="vertical"
+                android:singleLine="false"
+                style="@style/MagentaWhite"
+                android:textSize="20sp"
+                android:verticalScrollbarPosition="right" />
+
+        </ScrollView>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/MagentaWhite"
+            android:gravity="center"
+            android:text="@string/ReadReviews"
+            android:id="@+id/mReview"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            style="@style/MagentaWhite"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/ViewVideos"
+            android:id="@+id/mVideos"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            style="@style/MagentaWhite"
+            android:text="@string/SetFavourite"
+            android:id="@+id/favButton"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/Similar"
+            style="@style/MagentaWhite"
+            android:id="@+id/similarButton"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>

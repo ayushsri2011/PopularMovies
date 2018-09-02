@@ -1,0 +1,90 @@
+<resources>
+    <string name="API_KEY" translatable="false">9498a03d3c2c3de6b0eb1504be02bc9e</string>
+    <string name="labelFav">Favourites</string>
+    <string name="app_name" translatable="false">mDb</string>
+    <string name="internet_error">Error in Internet Connectivity</string>
+    <string name="error_close_reader">UNABLE TO CLOSE READER</string>
+    <string name="error_first_page">This is the first page</string>
+    <string name="error_last_page">This is the last page</string>
+    <string name="BASE_URL">http://api.themoviedb.org/3/</string>
+    <string name="buttonPrevious">Previous</string>
+    <string name="buttonNext">Next</string>
+    <string name="REQUEST_POPULAR">popular</string>
+    <string name="REQUEST_TOPRATED">top_rated</string>
+    <string name="UserRating">User Rating: </string>
+    <string name="ReleaseDate">Release Date:</string>
+    <string name="labelUpcoming">Upcoming</string>
+    <string name="labelNowPlaying">Now Playing</string>
+    <string name="labelTopRated">Top Rated</string>
+    <string name="labelPopularity">Popular</string>
+    <string name="welcome">Movies Stash</string>
+    <string name="CustomRowMoviePoster">CustomRowMoviePoster</string>
+    <string name="MoviePoster">MoviePoster</string>
+    <string name="ReadReviews">Reviews</string>
+    <string name="ViewVideos">Videos</string>
+    <string name="SetFavourite">Set Favourite</string>
+    <string name="UnsetFavourite">Unset Favourite</string>
+    <string name="onTheAir">On the Air</string>
+    <string name="AiringToday">Airing Today</string>
+
+    <string name="Similar">Similar</string>
+    <string name="serialsStash">TV Serials </string>
+    <string name="discover_movies">Discover Movies</string>
+    <string name="movies">Movies</string>
+    <string name="tv">TV</string>
+    <string name="discoverTV">Discover TV Serials</string>
+    <string name="genres">Select Genres</string>
+    <string name="year">Year</string>
+    <string name="baseImageURL">https://image.tmdb.org/t/p/w500</string>
+    <string name="search">Search</string>
+    <string name="people">Person</string>
+    <string name="welcome2">Welcome!!</string>
+
+
+
+    <string-array name="genres">
+        <item name="Action">Action</item>
+        <item name="Adventure">Adventure</item>
+        <item name="Animation">Animation</item>
+        <item name="Comedy">Comedy</item>
+        <item name="Crime">Crime</item>
+        <item name="Documentary">Documentary</item>
+        <item name="Drama">Drama</item>
+        <item name="Family">Family</item>
+        <item name="Fantasy">Fantasy</item>
+        <item name="History">History</item>
+        <item name="Horror">Horror</item>
+        <item name="Music">Music</item>
+        <item name="Mystery">Mystery</item>
+        <item name="Romance">Romance</item>
+        <item name="Science Fiction">Science Fiction</item>
+        <item name="TV Movie">TV Movie</item>
+        <item name="Thriller">Thriller</item>
+        <item name="War">War</item>
+        <item name="Western">Western</item>
+    </string-array>
+
+
+    <string-array name="genresID">
+        <item name="Action">28</item>
+        <item name="Adventure">12</item>
+        <item name="Animation">16</item>
+        <item name="Comedy">35</item>
+        <item name="Crime">80</item>
+        <item name="Documentary">99</item>
+        <item name="Drama">18</item>
+        <item name="Family">10751</item>
+        <item name="Fantasy">14</item>
+        <item name="History">36</item>
+        <item name="Horror">27</item>
+        <item name="Music">10402</item>
+        <item name="Mystery">9648</item>
+        <item name="Romance">10749</item>
+        <item name="Science Fiction">878</item>
+        <item name="TV Movie">10770</item>
+        <item name="Thriller">53</item>
+        <item name="War">10752</item>
+        <item name="Western">37</item>
+    </string-array>
+
+</resources>

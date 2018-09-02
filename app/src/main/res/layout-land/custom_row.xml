@@ -1,0 +1,26 @@
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="6dp"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/picture"
+        android:contentDescription="@string/CustomRowMoviePoster"
+        android:layout_width="400dp"
+        android:layout_height="490dp"
+        android:padding="0.5dp"
+        android:background="@color/white"
+        />
+
+    <TextView
+        android:id="@+id/movieName"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        style="@style/MagentaWhite"
+        android:textAlignment="center"/>
+
+
+</RelativeLayout>

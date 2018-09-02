@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/discover_masthead"
+        style="@style/MagentaWhite"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="@string/discover_movies"
+        android:textSize="25sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="1dp"
+        android:orientation="vertical"
+        >
+
+        <Button
+            android:id="@+id/btnOrder"
+            style="@style/MagentaWhite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:textSize="22sp"
+            android:layout_margin="1dp"
+            android:text="@string/genres" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/magenta"/>
+
+        <Button
+            style="@style/MagentaWhite"
+            android:layout_width="match_parent"
+            android:layout_margin="1dp"
+            android:layout_height="match_parent"
+            android:id="@+id/btn"
+            android:textSize="22sp"
+            android:text="@string/search"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
+
+
+    <!--android:background="@drawable/back"-->
