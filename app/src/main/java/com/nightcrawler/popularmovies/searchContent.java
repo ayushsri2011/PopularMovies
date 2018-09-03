@@ -35,12 +35,12 @@ public class searchContent extends AppCompatActivity {
         Intent intent=getIntent();
 
         category=intent.getStringExtra("category");
-        btnSearch=(Button)findViewById(R.id.btnSearch);
+//        btnSearch=(Button)findViewById(R.id.btnSearch);
 
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String temp=(String)searchTextView.getText().toString().trim();
+                String temp= searchTextView.getText().toString().trim();
 
 
                 if (temp.equals("")) {
