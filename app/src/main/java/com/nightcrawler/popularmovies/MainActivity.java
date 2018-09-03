@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (category.equals("person")) {
             button_popular.setText(R.string.labelPopularity);
-            button_topRated.setText("Latest");
+            button_topRated.setText(R.string.latest);
             button_search.setVisibility(View.INVISIBLE);
             button_nowplaying.setVisibility(View.INVISIBLE);
             button_discover.setVisibility(View.INVISIBLE);
