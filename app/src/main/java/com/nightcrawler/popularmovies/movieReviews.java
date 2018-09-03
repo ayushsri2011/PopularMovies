@@ -14,7 +14,9 @@ import java.util.concurrent.ExecutionException;
 
 public class movieReviews extends AppCompatActivity {
 
-    ListView list;List<String> li;
+    ListView list;
+    List<String> li;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -23,28 +25,27 @@ public class movieReviews extends AppCompatActivity {
 
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
-        Intent intent=getIntent();
-        String mID=intent.getStringExtra("movieID");
-        String category=intent.getStringExtra("category");
+        Intent intent = getIntent();
+        String mID = intent.getStringExtra("movieID");
+        String category = intent.getStringExtra("category");
 //        category="movie";
-        int movieID=Integer.parseInt(mID);
-        ArrayList<String> reviewList=new ArrayList<>();
+        int movieID = Integer.parseInt(mID);
+        ArrayList<String> reviewList = new ArrayList<>();
         try {
-
-            reviewList=CommonUtils.getReviews(movieReviews.this,movieID,category);
+            reviewList = CommonUtils.getReviews(movieReviews.this, movieID, category);
         } catch (ExecutionException | InterruptedException e) {
             e.printStackTrace();
         }
 
-        final ListView list= findViewById(R.id.listView1);
+        final ListView list = findViewById(R.id.listView1);
 
-        li= new ArrayList<>();
-        li=reviewList;
+        li = new ArrayList<>();
+        li = reviewList;
 
-        if(li.isEmpty())
-        li.add("No reviews yet.");
+        if (li.isEmpty())
+            li.add("No reviews yet.");
 
-        ArrayAdapter<String> adp=new ArrayAdapter<>(getBaseContext(),R.layout.list,li);
+        ArrayAdapter<String> adp = new ArrayAdapter<>(getBaseContext(), R.layout.list, li);
         list.setAdapter(adp);
 
 

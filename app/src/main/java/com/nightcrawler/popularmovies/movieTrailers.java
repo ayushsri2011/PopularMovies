@@ -21,6 +21,7 @@ public class movieTrailers extends AppCompatActivity {
 
     private ListView list;
     private List<String> li;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

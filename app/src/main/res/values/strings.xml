@@ -39,7 +39,7 @@
     <string name="search">Search</string>
     <string name="people">Person</string>
     <string name="welcome2">Welcome!!</string>
-
+    <string name="latest">Latest</string>
 
 
     <string-array name="genres">

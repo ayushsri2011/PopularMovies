@@ -10,7 +10,8 @@
 
         android:layout_width="300dp"
         android:layout_height="300dp"
-        android:src="@drawable/ph"/>
+        android:src="@drawable/ph"
+        android:contentDescription="Splash" />
 
     <!--<TextView-->
         <!--android:layout_width="match_parent"-->
