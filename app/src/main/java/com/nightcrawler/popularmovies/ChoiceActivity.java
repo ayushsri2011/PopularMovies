@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -24,6 +25,8 @@ public class ChoiceActivity extends AppCompatActivity {
 //        btn_tv=(TextView)findViewById(R.id.btn_tv);
 //        btn_else=(Button)findViewById(R.id.btn_else);
 
+        if(!CommonUtils.checkConnectivity(getBaseContext()))
+            Toast.makeText(this, "Ensure net connectivity to proceed", Toast.LENGTH_SHORT).show();
 
         btn_movies.setOnClickListener(new View.OnClickListener() {
             @Override
