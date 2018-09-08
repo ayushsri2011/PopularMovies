@@ -21,9 +21,6 @@ public class ChoiceActivity extends AppCompatActivity {
         setContentView(R.layout.activity_choice);
         ButterKnife.bind(this);
 
-//        btn_movies=(TextView)findViewById(R.id.btn_movies);
-//        btn_tv=(TextView)findViewById(R.id.btn_tv);
-//        btn_else=(Button)findViewById(R.id.btn_else);
 
         if(!CommonUtils.checkConnectivity(getBaseContext()))
             Toast.makeText(this, "Ensure net connectivity to proceed", Toast.LENGTH_SHORT).show();
