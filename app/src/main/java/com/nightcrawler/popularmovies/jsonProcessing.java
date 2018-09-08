@@ -52,15 +52,15 @@ public class jsonProcessing {
                 String vote_average = c.getString("vote_average");
                 String movieID = c.getString("id");
 
-                CustomPojo cp = new CustomPojo();
-                cp.setPosterPath(poster_path);
-                cp.setReleaseDate(release_date);
-                cp.setTitle(title);
-                cp.setVoteAverage(vote_average);
-                cp.setOverview(overview);
-                cp.setMovieID(movieID);
-                cp.setCategory(category);
-                movieList.add(cp);
+                CustomPojo movie = new CustomPojo();
+                movie.setPosterPath(poster_path);
+                movie.setReleaseDate(release_date);
+                movie.setTitle(title);
+                movie.setVoteAverage(vote_average);
+                movie.setOverview(overview);
+                movie.setMovieID(movieID);
+                movie.setCategory(category);
+                movieList.add(movie);
 
             }
         } catch (Exception e) {
@@ -138,6 +138,5 @@ public class jsonProcessing {
 
         return Integer.parseInt(temp.getString("total_results"));
     }
-
 
 }
