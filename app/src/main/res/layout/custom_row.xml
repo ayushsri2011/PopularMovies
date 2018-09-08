@@ -21,7 +21,9 @@
         android:layout_alignParentBottom="true"
         style="@style/MagentaWhite"
         android:textSize="14sp"
-        android:textAlignment="center"/>
+        android:textAlignment="center"
+        android:background="@color/white"
+        android:textColor="@color/magenta"/>
 
 
 </RelativeLayout>

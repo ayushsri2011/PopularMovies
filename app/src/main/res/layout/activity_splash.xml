@@ -2,16 +2,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="center"
+    >
 
 
     <ImageView
         android:layout_gravity="center"
-
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:src="@drawable/ph"
-        android:contentDescription="Splash" />
+        android:foregroundGravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/funky"
+        android:contentDescription="@string/splashscreen" />
 
     <!--<TextView-->
         <!--android:layout_width="match_parent"-->

@@ -4,7 +4,8 @@
         android:layout_height="wrap_content"
         android:padding="1.5dp"
         android:textSize="20sp"
-        style="@style/MagentaWhite"
+        android:maxLines="3"
+        android:singleLine="false"
         android:layout_margin="10dp"
-    >
+        style="@style/MagentaWhite">
     </TextView>
