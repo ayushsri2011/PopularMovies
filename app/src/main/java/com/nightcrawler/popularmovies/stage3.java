@@ -39,19 +39,30 @@ public class stage3 extends AppCompatActivity {
     private ArrayList<CustomPojo> data;
     private static final String TAG = MainActivity.class.getSimpleName();
 
-    @BindView(R.id.mReview) Button mReviews;
-    @BindView(R.id.mVideos) Button mVideos;
-    @BindView(R.id.favButton) Button favButton;
-    @BindView(R.id.similarButton) Button similarButton;
-    @BindView(R.id.title) TextView title;
-    @BindView(R.id.vote_average) TextView vote_average;
-    @BindView(R.id.releaseDate) TextView releaseDate;
-    @BindView(R.id.synopsis) TextView synopsis;
-    @BindView(R.id.poster) ImageView poster;
-    private String movieID,category;
+    @BindView(R.id.mReview)
+    Button mReviews;
+    @BindView(R.id.mVideos)
+    Button mVideos;
+    @BindView(R.id.favButton)
+    Button favButton;
+    @BindView(R.id.similarButton)
+    Button similarButton;
+    @BindView(R.id.title)
+    TextView title;
+    @BindView(R.id.vote_average)
+    TextView vote_average;
+    @BindView(R.id.releaseDate)
+    TextView releaseDate;
+    @BindView(R.id.synopsis)
+    TextView synopsis;
+    @BindView(R.id.poster)
+    ImageView poster;
+    private String movieID, category;
 
-    ListView list;    List<String> li;
-    ListView list2;   List<String> li2;
+    ListView list;
+    List<String> li;
+    ListView list2;
+    List<String> li2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,24 +75,24 @@ public class stage3 extends AppCompatActivity {
 
         Intent intent = getIntent();
         Bundle args = intent.getBundleExtra("BUNDLE");
-        data = (ArrayList<CustomPojo>)args.getSerializable("ARRAYLIST");
+        data = (ArrayList<CustomPojo>) args.getSerializable("ARRAYLIST");
 
         assert data != null;
 
-        movieID=data.get(0).getMovieID();
-        category=data.get(0).getCategory();
+        movieID = data.get(0).getMovieID();
+        category = data.get(0).getCategory();
 
-        String base_image_url=getString(R.string.baseImageURL);
-        String poster_path=data.get(0).getPosterPath();
-        String url  =   base_image_url  +   poster_path;
-        if(CommonUtils.checkConnectivity(stage3.this))
-        Picasso.get().load(url).placeholder(R.drawable.ph).into(poster);
+        String base_image_url = getString(R.string.baseImageURL);
+        String poster_path = data.get(0).getPosterPath();
+        String url = base_image_url + poster_path;
+        if (CommonUtils.checkConnectivity(stage3.this))
+            Picasso.get().load(url).placeholder(R.drawable.ph).into(poster);
 
         title.setText(data.get(0).getTitle());
         vote_average.setText(new StringBuilder().append(getString(R.string.UserRating)).append(data.get(0).getVoteAverage()).toString());
         releaseDate.setText(new StringBuilder().append(getString(R.string.ReleaseDate)).append(data.get(0).getReleaseDate()).toString());
         synopsis.setText(data.get(0).getOverview().trim().equals("") ? "Synopsis unavailable." : data.get(0).getOverview());
-        System.out.println("TESTING"+getString(R.string.REQUEST_POPULAR));
+        System.out.println("TESTING" + getString(R.string.REQUEST_POPULAR));
         loadReviews();
         loadVideos();
 
@@ -91,8 +102,8 @@ public class stage3 extends AppCompatActivity {
             public void onClick(View v) {
                 Toast.makeText(stage3.this, "Loading", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(stage3.this, movieReviews.class);
-                intent.putExtra("movieID",movieID);
-                intent.putExtra("category",category);
+                intent.putExtra("movieID", movieID);
+                intent.putExtra("category", category);
                 startActivity(intent);
             }
         });
@@ -101,19 +112,18 @@ public class stage3 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent=new Intent(stage3.this,movieTrailers.class);
-                intent.putExtra("movieID",movieID);
-                intent.putExtra("category",category);
+                Intent intent = new Intent(stage3.this, movieTrailers.class);
+                intent.putExtra("movieID", movieID);
+                intent.putExtra("category", category);
                 startActivity(intent);
             }
         });
 
 
-
         similarButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(CommonUtils.checkConnectivity(stage3.this)) {
+                if (CommonUtils.checkConnectivity(stage3.this)) {
                     try {
                         String search_type = movieID + "/similar";
                         Log.v(TAG, "searchResult: Type is--" + search_type);
@@ -150,30 +160,27 @@ public class stage3 extends AppCompatActivity {
                     } catch (InterruptedException | ExecutionException | JSONException e) {
                         e.printStackTrace();
                     }
-                }
-                else
+                } else
                     Toast.makeText(stage3.this, "No internet", Toast.LENGTH_SHORT).show();
-            }});
-
+            }
+        });
 
 
         Resources res = getResources();
-        final String setFav=res.getString(R.string.SetFavourite);
-        final String unsetFav=res.getString(R.string.UnsetFavourite);
+        final String setFav = res.getString(R.string.SetFavourite);
+        final String unsetFav = res.getString(R.string.UnsetFavourite);
 
 
-        String[] selectionArgs = { movieID };
+        String[] selectionArgs = {movieID};
         Cursor mCount = getContentResolver().query(moviesContract.moviesContractEntry.CONTENT_URI,
-                        null,"movieID=?",selectionArgs,null);
+                null, "movieID=?", selectionArgs, null);
 
-        int temp= Objects.requireNonNull(mCount).getCount();
+        int temp = Objects.requireNonNull(mCount).getCount();
         mCount.close();
 
-        if(temp==0)
-        {
+        if (temp == 0) {
             favButton.setText(setFav);
-        }
-        else {
+        } else {
             favButton.setText(unsetFav);
         }
 
@@ -181,14 +188,11 @@ public class stage3 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(favButton.getText()==setFav)
-                {
+                if (favButton.getText() == setFav) {
                     insertFavDb();
                     favButton.setText(unsetFav);
-                }
-                else
-                {
-                    Uri uri =moviesContract.moviesContractEntry.CONTENT_URI.buildUpon().appendPath(movieID).build();
+                } else {
+                    Uri uri = moviesContract.moviesContractEntry.CONTENT_URI.buildUpon().appendPath(movieID).build();
                     getContentResolver().delete(uri, null, null);
                     Toast.makeText(stage3.this, "Removed from favourites", Toast.LENGTH_SHORT).show();
                     favButton.setText(setFav);
@@ -208,49 +212,48 @@ public class stage3 extends AppCompatActivity {
         }
     }
 
-    public void insertFavDb()  {
-    ContentValues contentValues = new ContentValues();
-    contentValues.put(moviesContract.moviesContractEntry.MOVIE_POSTERPATH, data.get(0).getPosterPath());
-    contentValues.put(moviesContract.moviesContractEntry.MOVIE_ID, data.get(0).getMovieID());
-    contentValues.put(moviesContract.moviesContractEntry.MOVIE_OVERVIEW, data.get(0).getOverview());
-    contentValues.put(moviesContract.moviesContractEntry.MOVIE_RELEASE_DATE, data.get(0).getReleaseDate());
-    contentValues.put(moviesContract.moviesContractEntry.MOVIE_TITLE, data.get(0).getTitle());
-    contentValues.put(moviesContract.moviesContractEntry.MOVIE_USER_RATING, data.get(0).getVoteAverage());
-    contentValues.put(moviesContract.moviesContractEntry.MOVIE_CATEGORY, data.get(0).getCategory());
+    public void insertFavDb() {
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(moviesContract.moviesContractEntry.MOVIE_POSTERPATH, data.get(0).getPosterPath());
+        contentValues.put(moviesContract.moviesContractEntry.MOVIE_ID, data.get(0).getMovieID());
+        contentValues.put(moviesContract.moviesContractEntry.MOVIE_OVERVIEW, data.get(0).getOverview());
+        contentValues.put(moviesContract.moviesContractEntry.MOVIE_RELEASE_DATE, data.get(0).getReleaseDate());
+        contentValues.put(moviesContract.moviesContractEntry.MOVIE_TITLE, data.get(0).getTitle());
+        contentValues.put(moviesContract.moviesContractEntry.MOVIE_USER_RATING, data.get(0).getVoteAverage());
+        contentValues.put(moviesContract.moviesContractEntry.MOVIE_CATEGORY, data.get(0).getCategory());
 
-    getContentResolver().insert(moviesContract.moviesContractEntry.CONTENT_URI, contentValues);
+        getContentResolver().insert(moviesContract.moviesContractEntry.CONTENT_URI, contentValues);
 
-    Toast.makeText(stage3.this, "Added to favourites", Toast.LENGTH_SHORT).show();
-}
-
-    public void loadReviews()  {
-
-    ArrayList<String> reviewList = new ArrayList<>();
-    try {
-        reviewList = CommonUtils.getReviews(stage3.this, Integer.parseInt(movieID), category);
-    } catch (ExecutionException | InterruptedException e) {
-        e.printStackTrace();
+        Toast.makeText(stage3.this, "Added to favourites", Toast.LENGTH_SHORT).show();
     }
 
-    final ListView list = findViewById(R.id.listView1);
+    public void loadReviews() {
 
-    li = new ArrayList<>();
-    li = reviewList;
+        ArrayList<String> reviewList = new ArrayList<>();
+        try {
+            reviewList = CommonUtils.getReviews(stage3.this, Integer.parseInt(movieID), category);
+        } catch (ExecutionException | InterruptedException e) {
+            e.printStackTrace();
+        }
 
-    if (li.isEmpty())
-        li.add("No reviews yet.");
+        final ListView list = findViewById(R.id.listView1);
 
-    ArrayAdapter<String> adp = new ArrayAdapter<>(getBaseContext(), R.layout.list, li);
-    list.setAdapter(adp);
-    list.setClickable(false);
-    setListViewHeightBasedOnChildren(list);
-}
+        li = new ArrayList<>();
+        li = reviewList;
 
-    public void loadVideos()
-    {
+        if (li.isEmpty())
+            li.add("No reviews yet.");
+
+        ArrayAdapter<String> adp = new ArrayAdapter<>(getBaseContext(), R.layout.list, li);
+        list.setAdapter(adp);
+        list.setClickable(false);
+        setListViewHeightBasedOnChildren(list);
+    }
+
+    public void loadVideos() {
         ArrayList<CustomPojo3> mTrailer = new ArrayList<>();
         try {
-            mTrailer = CommonUtils.getTrailerList(stage3.this, Integer.parseInt(movieID),category);
+            mTrailer = CommonUtils.getTrailerList(stage3.this, Integer.parseInt(movieID), category);
         } catch (ExecutionException | InterruptedException e) {
             e.printStackTrace();
         }
@@ -261,7 +264,7 @@ public class stage3 extends AppCompatActivity {
         for (int i = 0; i < mTrailer.size(); i++)
             li2.add(mTrailer.get(i).getTname());
 
-        if(li2.isEmpty()) {
+        if (li2.isEmpty()) {
             li2.add("No videos available");
             Toast.makeText(stage3.this, "Loading", Toast.LENGTH_SHORT).show();
         }
@@ -286,8 +289,8 @@ public class stage3 extends AppCompatActivity {
     }
 
     private void watchYoutubeVideo(String id) {
-        Intent appIntent = new Intent(Intent.ACTION_VIEW,Uri.parse(id));
-        Intent webIntent = new Intent(Intent.ACTION_VIEW,Uri.parse("http://www.youtube.com/watch?v=" + id));
+        Intent appIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(id));
+        Intent webIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.youtube.com/watch?v=" + id));
         try {
             startActivity(appIntent);
         } catch (ActivityNotFoundException ex) {

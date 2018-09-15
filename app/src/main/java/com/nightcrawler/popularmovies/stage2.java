@@ -20,11 +20,8 @@ import java.util.concurrent.ExecutionException;
 import static com.nightcrawler.popularmovies.CommonUtils.generateAddress;
 
 public class stage2 extends AppCompatActivity {
-    //    private static final String TAG = MainActivity.class.getSimpleName();
     private RecyclerView recyclerView;
     private CustomAdapter adapter;
-    //    private Button button_next;    private Button button_prev;
-//    ProgressBar pb;
     private int search_type, page, total_pages = 0;
     private ArrayList<CustomPojo> movieList;
     private ArrayList<CustomPojo> nmovieList;
@@ -64,9 +61,6 @@ public class stage2 extends AppCompatActivity {
         category = args.getString("category", "movie");
 
         page = args.getInt("page");
-//        button_next= findViewById(R.id.next_button);
-//        button_prev= findViewById(R.id.prev_button);
-
 
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
@@ -129,8 +123,6 @@ public class stage2 extends AppCompatActivity {
     }
 
     private void populateRecyclerViewValues(ArrayList<CustomPojo> nmovieList) {
-//        Log.d("test", "Size is-- " + movieList.size());
-//        Log.d("test", "Size is-- " + nmovieList.size());
         movieList.addAll(nmovieList);
 //        adapter.setListContent(movieList);
         //        recyclerView.setAdapter(adapter);
