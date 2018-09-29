@@ -43,8 +43,8 @@ public class favourites extends AppCompatActivity implements LoaderManager.Loade
         Intent intent=getIntent();
         category=intent.getStringExtra("category");
 
-        button_next= findViewById(R.id.next_button);button_next.setVisibility(View.INVISIBLE);
-        button_prev= findViewById(R.id.prev_button);button_prev.setVisibility(View.INVISIBLE);
+//        button_next= findViewById(R.id.next_button);button_next.setVisibility(View.INVISIBLE);
+//        button_prev= findViewById(R.id.prev_button);button_prev.setVisibility(View.INVISIBLE);
 
         LoaderManager loaderManager = getSupportLoaderManager();
         Loader<String> loader = loaderManager.getLoader(TASK_LOADER_ID);

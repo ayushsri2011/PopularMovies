@@ -35,7 +35,6 @@ public class searchContent extends AppCompatActivity {
         Intent intent=getIntent();
 
         category=intent.getStringExtra("category");
-//        btnSearch=(Button)findViewById(R.id.btnSearch);
 
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override

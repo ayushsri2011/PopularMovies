@@ -29,7 +29,7 @@ public class stage2 extends AppCompatActivity {
     private String category;
     Boolean isScrolling = false;
 
-    int currentItems, totalItems, scrollOutItems,test=0;
+    int currentItems, totalItems, scrollOutItems,test=0,x=0;
 
 
     @Override
@@ -47,14 +47,11 @@ public class stage2 extends AppCompatActivity {
         movieList = (ArrayList<CustomPojo>) args.getSerializable("ARRAYLIST");
 
         recyclerView = findViewById(R.id.bohe);
-//        picture = findViewById(R.id.picture);
         final GridLayoutManager lm = new GridLayoutManager(stage2.this, 2);
         recyclerView.setLayoutManager(lm);
-//        recyclerView.setLayoutManager(new GridLayoutManager(stage2.this, 2));
         adapter = new CustomAdapter(this);
         adapter.setListContent(movieList);
         recyclerView.setAdapter(adapter);
-//        populateRecyclerViewValues(movieList);
 
         total_pages = args.getInt("total_pages");
         search_type = args.getInt("search_type");
@@ -76,9 +73,13 @@ public class stage2 extends AppCompatActivity {
                 currentItems = lm.getChildCount();
                 totalItems = lm.getItemCount();
                 scrollOutItems = lm.findFirstVisibleItemPosition();
-                if (isScrolling && (currentItems + scrollOutItems == totalItems)) {
-                    pb2.setVisibility(View.VISIBLE);
+                if (isScrolling && (currentItems + scrollOutItems +2== totalItems)) {
+                    if(x==0)
+                    {
+                        if(category!="search")
                     fetchData();
+                    pb2.setVisibility(View.VISIBLE);
+                    }
                 }
             }
         });
@@ -91,6 +92,7 @@ public class stage2 extends AppCompatActivity {
             public void run() {
                 if (page == total_pages) {
                     CommonUtils.alert3(stage2.this);
+                    x=1;
                 } else {
                     page++;
                     String ty;

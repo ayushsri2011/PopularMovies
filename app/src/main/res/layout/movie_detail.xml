@@ -90,6 +90,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/magenta"
                 android:text="Synopsis"
+                android:padding="6dp"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
 
@@ -117,6 +118,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/magenta"
                 android:text="@string/ViewVideos"
+                android:padding="6dp"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
 
@@ -137,6 +139,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/magenta"
                 android:text="@string/ReadReviews"
+                android:padding="6dp"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
 

@@ -96,7 +96,6 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
             args.putSerializable("ARRAYLIST", list);
             intent.putExtra("BUNDLE", args);
             intent.putExtra("category", category);
-            Log.v("PUSSY", list_members.get(pos).getCategory());
             context.startActivity(intent);
 
 

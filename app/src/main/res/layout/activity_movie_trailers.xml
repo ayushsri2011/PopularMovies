@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/listView2"
+        android:padding="6dp"
         style="@style/MagentaWhite"
         />
 

@@ -51,7 +51,7 @@ public class ChoiceActivity extends AppCompatActivity {
         btn_people.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(ChoiceActivity.this,MainActivity.class);
+                Intent intent=new Intent(ChoiceActivity.this,PeopleActivity.class);
                 intent.putExtra("category","person");
                 startActivity(intent);
             }

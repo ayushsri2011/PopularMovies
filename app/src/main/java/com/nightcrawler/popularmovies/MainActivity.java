@@ -182,7 +182,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-
     private void blockButtons() {
         button_topRated.setEnabled(false);
         button_favourites.setEnabled(false);
