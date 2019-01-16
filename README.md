@@ -56,7 +56,7 @@ You must provide your own API key in order to make API requests.
 <img src="/Movie_view_1.jpg" height="300">
 <img src="/Movie_view_2.jpg" height="300">
 <img src="/Trailers_list.jpg" height="300">
-<img src="/Similar_movies_search.jpg" height="300">
+
 
 ### Genres
 
@@ -65,6 +65,11 @@ You must provide your own API key in order to make API requests.
 ### TV List
 
 <img src="/TV_list.jpg" height="300">
+
+
+### TV Series Details Activity
+
+<img src="/TV_view_1.jpg" height="300">
 
 ### Exit
 
