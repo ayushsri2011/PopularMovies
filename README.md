@@ -22,15 +22,11 @@ You must provide your own API key in order to make API requests.
 
 ## Libraries used
 
+* [GSON](https://github.com/google/gson)
 * [ButterKnife](https://github.com/JakeWharton/butterknife)
-* [Retrofit](https://github.com/square/retrofit)
-* [SQLBrite](https://github.com/square/sqlbrite)
-* [RxJava](https://github.com/ReactiveX/RxJava)
-* [RxAndroid](https://github.com/ReactiveX/RxAndroid)
+* [Picasso] (https://github.com/square/picasso)
 * [Glide](https://github.com/bumptech/glide)
-* [GlidePalette](https://github.com/florent37/GlidePalette)
-* [Android-ObservableScrollView](https://github.com/ksoichiro/Android-ObservableScrollView)
-* [Gradle Retrolambda Plugin](https://github.com/evant/gradle-retrolambda)
+* [Volley](https://github.com/google/volley)
 
 ## Screens
 
