@@ -30,28 +30,42 @@ You must provide your own API key in order to make API requests.
 
 ## Screens
 
-HomePage
+### Splash Screen
 
-<img src="/PopularMovies/Home_page.jpg" height="500">
+<img src="/Splash_Screen.jpg" height="500">
 
-Movies Activity
+### HomePage
 
-<img src="/PopularMovies/Movies_page.jpg" height="500">
+<img src="/Home_page.jpg" height="300">
+
+### Movies Activity
+
+<img src="/Movies_page.jpg" height="300">
         
+### TV Serials Activity
 
-TV Serials Activity
+<img src="/TV_homepage.jpg" height="300">
 
-<img src="/PopularMovies/TV_homepage.jpg" height="500">
+### Movies List
 
-
-
-![screen](../master/art/phone-movies.png)
-
-![screen](../master/art/phone-details.png)
-
-![screen](../master/art/tablet-port.png)
-
-![screen](../master/art/tablet-land.png)
+<img src="/Movie_list.jpg" height="300">
 
 
+### Movie Details Activity
 
+<img src="/Movie_view_1.jpg" height="300">
+<img src="/Movie_view_2.jpg" height="300">
+<img src="/Trailers_list.jpg" height="300">
+<img src="/Similar_movies_search.jpg" height="300">
+
+### Genres
+
+<img src="/Genres.jpg" height="300">
+
+### TV List
+
+<img src="/TV_list.jpg" height="300">
+
+### Exit
+
+<img src="/Exit_dialog.jpg" height="500">
