@@ -24,11 +24,26 @@ You must provide your own API key in order to make API requests.
 
 * [GSON](https://github.com/google/gson)
 * [ButterKnife](https://github.com/JakeWharton/butterknife)
-* [Picasso] (https://github.com/square/picasso)
+* [Picasso](https://github.com/square/picasso)
 * [Glide](https://github.com/bumptech/glide)
 * [Volley](https://github.com/google/volley)
 
 ## Screens
+
+HomePage
+
+<img src="/PopularMovies/Home_page.jpg" height="500">
+
+Movies Activity
+
+<img src="/PopularMovies/Movies_page.jpg" height="500">
+        
+
+TV Serials Activity
+
+<img src="/PopularMovies/TV_homepage.jpg" height="500">
+
+
 
 ![screen](../master/art/phone-movies.png)
 
